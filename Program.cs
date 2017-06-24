@@ -39,7 +39,7 @@ namespace RunningDatabase
                 TextForTrack[1] = "";
                 TextForTrack[2] = $"Length = {trackLength} kilometers";
                 TextForTrack[3] = "";
-                TextForTrack[4] = "Note about the track: ";
+                TextForTrack[4] = $"Note about the track: ";
                 TextForTrack[5] = $"{note}";
                 File.WriteAllLines($@"track{track}.txt", TextForTrack);
                 Console.WriteLine();
@@ -71,7 +71,7 @@ namespace RunningDatabase
                     {
                         trackText = File.ReadAllLines($@"track{i}.txt");
                         Console.Clear();
-                        Console.WriteLine($"Time for track: {trackText[0]}");
+                        Console.WriteLine($"{trackText[0]}");
                         Console.WriteLine();
                         Console.WriteLine("Reminder: 1 hour = 3600 seconds, 1 minute = 60 seconds, and don't include hundreds!");
                         Console.WriteLine("Another reminder, there's a calculator application in your computer");
@@ -118,17 +118,21 @@ namespace RunningDatabase
                         {
                             time = $"{hours}:0{minutes}:0{seconds}";
                         }
-                        string[] newFile = new string[intialNumLines + 6];
+                        if(seconds > 10 && minutes > 10)
+                        {
+                            time = $"{hours}:{minutes}:{seconds}";
+                        }
+                        string[] newFile = new string[intialNumLines + 7];
                         for (int y = 0; y <= intialNumLines; y++)
                         {
                             newFile[y] = trackText[y];
                         }
-                        newFile[intialNumLines] = "";
-                        newFile[intialNumLines + 1] = "A run:";
-                        newFile[intialNumLines + 2] = "";
-                        newFile[intialNumLines + 3] = $"Data of sumbiting the run: {DateTime.Now}";
-                        newFile[intialNumLines + 4] = $"Run time = {time}";
-                        newFile[intialNumLines + 5] = $"Note: {note2}";
+                        newFile[intialNumLines + 1] = "";
+                        newFile[intialNumLines + 2] = "A run:";
+                        newFile[intialNumLines + 3] = "";
+                        newFile[intialNumLines + 4] = $"Data of sumbiting the run: {DateTime.Now}";
+                        newFile[intialNumLines + 5] = $"Run time = {time}";
+                        newFile[intialNumLines + 6] = $"Note: {note2}";
                         File.Delete($@"track{i}.txt");
                         File.WriteAllLines($@"track{i}.txt", newFile);
                         Console.WriteLine();
@@ -146,6 +150,9 @@ namespace RunningDatabase
                 Console.Clear();
                 string[] trackText;
 
+                Console.WriteLine("Enter the number of the track (that you want to view your runs in it):");
+                Console.WriteLine();
+
                 int tracksCount = int.Parse(File.ReadAllText("count.txt"));
                 for (int i = 0; i <= tracksCount; i++)
                 {
@@ -156,8 +163,7 @@ namespace RunningDatabase
                         Console.WriteLine();
                     }
                 }
-                Console.WriteLine("Enter the number of the track (that you want to view your runs in it):");
-                Console.WriteLine();
+               
                 int input2 = int.Parse(Console.ReadLine());
                 Console.Clear();
                 Console.WriteLine();
