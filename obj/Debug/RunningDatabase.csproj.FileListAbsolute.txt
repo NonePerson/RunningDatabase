@@ -1,0 +1,6 @@
+C:\Users\work\Desktop\ForBrit\ForBrit\RunningDatabase\RunningDatabase\RunningDatabase\bin\Debug\RunningDatabase.exe.config
+C:\Users\work\Desktop\ForBrit\ForBrit\RunningDatabase\RunningDatabase\RunningDatabase\bin\Debug\RunningDatabase.exe
+C:\Users\work\Desktop\ForBrit\ForBrit\RunningDatabase\RunningDatabase\RunningDatabase\bin\Debug\RunningDatabase.pdb
+C:\Users\work\Desktop\ForBrit\ForBrit\RunningDatabase\RunningDatabase\RunningDatabase\obj\Debug\RunningDatabase.csprojResolveAssemblyReference.cache
+C:\Users\work\Desktop\ForBrit\ForBrit\RunningDatabase\RunningDatabase\RunningDatabase\obj\Debug\RunningDatabase.exe
+C:\Users\work\Desktop\ForBrit\ForBrit\RunningDatabase\RunningDatabase\RunningDatabase\obj\Debug\RunningDatabase.pdb
